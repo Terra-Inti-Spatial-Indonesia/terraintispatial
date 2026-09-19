@@ -4,7 +4,15 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Cpu, ScanEye, Sparkles, Filter, Check, Eye } from "lucide-react";
 
-export const AIDetectionSection: React.FC = () => {
+export default function AIDetection(){
+  return (
+    <>
+    <AIDetectionSection />
+    </>
+  )
+}
+
+const AIDetectionSection: React.FC = () => {
   const [showOverlays, setShowOverlays] = useState(true);
 
   const capabilitiesLine1 = ["OBJECT DETECTION", "CLASSIFICATION", "SEGMENTATION"];

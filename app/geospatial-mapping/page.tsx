@@ -4,6 +4,12 @@ import React from "react";
 import Image from "next/image";
 import { Layers, MapPin, Database, Compass, Globe } from "lucide-react";
 
+export default function GeospatialMapping(){
+    return(
+        <GeospatialMappingSection />
+    )
+}
+
 export const GeospatialMappingSection: React.FC = () => {
   const services = [
     "Topographic",

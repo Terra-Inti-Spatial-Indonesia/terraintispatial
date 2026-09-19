@@ -1,8 +1,16 @@
 "use client";
 
 import React, { useState } from "react";
-import { LidarSlider } from "./LidarSlider";
+import { LidarSlider } from "@/app/components/LidarSlider";
 import { CheckCircle2, ChevronRight, Layers, Cpu, ShieldCheck, Ruler } from "lucide-react";
+
+export default function AerialData() {
+  return (
+    <>
+      <AerialDataSection />
+    </>
+  );
+}
 
 export const AerialDataSection: React.FC = () => {
   const [activePipelineStep, setActivePipelineStep] = useState<number>(1);

@@ -4,6 +4,13 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Building2, Layers, Cpu, Database, Check } from "lucide-react";
 
+
+export default function BimScan(){
+    <>
+        <BIMScanToBIMSection />
+    </>
+}
+
 export const BIMScanToBIMSection: React.FC = () => {
   const scopeItems = [
     "Scan-to-BIM",

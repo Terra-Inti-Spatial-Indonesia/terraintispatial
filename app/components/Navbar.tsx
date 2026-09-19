@@ -17,14 +17,13 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { label: "ABOUT", href: "#about" },
-    { label: "CAPABILITIES", href: "#capabilities" },
-    { label: "AERIAL DATA", href: "#aerial-data" },
-    { label: "WORKFLOW", href: "#workflow" },
-    { label: "INDUSTRIES", href: "#industries" },
-    { label: "QUALITY", href: "#quality" },
-    { label: "PROJECTS", href: "#projects" },
-    { label: "CONTACT", href: "#contact" },
+    { label: "EQUIPMENT", href: "/" },
+    // { label: "CAPABILITIES", href: "#capabilities" },
+    { label: "WORKFLOW", href: "/workflow" },
+    { label: "INDUSTRIES", href: "/industries" },
+    // { label: "QUALITY", href: "#quality" },
+    // { label: "PROJECTS", href: "#projects" },
+    { label: "CONTACT", href: "/contact" },
   ];
 
   return (
@@ -32,13 +31,13 @@ export const Navbar: React.FC = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-[#111315]/90 backdrop-blur-md border-b border-white/10 shadow-2xl py-3"
-          : "bg-[#111315]/40 backdrop-blur-sm border-b border-white/5 py-4"
+          : "bg-[#111315]/70 backdrop-blur-sm border-b border-white/5 py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center group">
+          <a href="/" className="flex items-center group">
             <BrandLogo size={32} />
           </a>
 

@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -69,7 +71,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased scroll-smooth`}
     >
       <body className="min-h-screen bg-[#111315] text-[#F5F5F7] font-sans selection:bg-[#E35B27] selection:text-white">
+        <Navbar/>        
         {children}
+        <Footer/>
       </body>
     </html>
   );

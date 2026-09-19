@@ -3,7 +3,15 @@
 import React from "react";
 import Image from "next/image";
 
-export const VisionSection: React.FC = () => {
+export default function About(){
+    return (
+    <>
+        <VisionSection/>
+    </>
+    )
+}
+
+const VisionSection: React.FC = () => {
   return (
     <section 
       id="vision" 

@@ -4,6 +4,14 @@ import React from "react";
 import Image from "next/image";
 import { Box, Layers, Building, Eye, Globe2 } from "lucide-react";
 
+export default function CityModelingPage() {
+  return (
+    <>
+      <CityModelingSection />
+    </>
+  );
+}
+
 export const CityModelingSection: React.FC = () => {
   const domains = [
     { title: "URBAN PLANNING", desc: "Zoning analysis, line-of-sight studies, skyline impact and shadow simulations." },

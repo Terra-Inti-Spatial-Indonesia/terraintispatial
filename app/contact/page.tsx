@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
+import { Send, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
-import { BrandLogo } from "./BrandLogo";
-import { Mail, MapPin, Phone, Globe, Send, CheckCircle2 } from "lucide-react";
 
-export const FinalCTASection: React.FC = () => {
+export default function ContactFormPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -18,10 +17,9 @@ export const FinalCTASection: React.FC = () => {
     e.preventDefault();
     setFormSubmitted(true);
   };
-
   return (
-    <section 
-      id="contact" 
+    <section
+      id="contact"
       className="relative bg-[#111315] text-[#F5F5F7] py-24 sm:py-36 border-b border-white/10 overflow-hidden"
     >
       {/* Background Subtle Spatial Grid */}
@@ -94,7 +92,9 @@ export const FinalCTASection: React.FC = () => {
                   <span>[Insert phone]</span>
                 </div>
                 <div>
-                  <span className="text-neutral-500">LINKEDIN / INSTAGRAM — </span>
+                  <span className="text-neutral-500">
+                    LINKEDIN / INSTAGRAM —{" "}
+                  </span>
                   <span>[Insert handle]</span>
                 </div>
               </div>
@@ -118,7 +118,8 @@ export const FinalCTASection: React.FC = () => {
                   TRANSMISSION RECEIVED
                 </h3>
                 <p className="text-xs font-mono text-neutral-400 max-w-xs mx-auto">
-                  Thank you. Our spatial engineering team will review your parameters and follow up shortly.
+                  Thank you. Our spatial engineering team will review your
+                  parameters and follow up shortly.
                 </p>
                 <button
                   onClick={() => setFormSubmitted(false)}
@@ -137,7 +138,9 @@ export const FinalCTASection: React.FC = () => {
                     type="text"
                     required
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                     placeholder="e.g. Engineering Lead / PT Mining Indonesia"
                     className="w-full bg-black/50 border border-white/15 px-3.5 py-2.5 text-xs font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-[#E35B27]"
                   />
@@ -151,7 +154,9 @@ export const FinalCTASection: React.FC = () => {
                     type="email"
                     required
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                     placeholder="name@company.com"
                     className="w-full bg-black/50 border border-white/15 px-3.5 py-2.5 text-xs font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-[#E35B27]"
                   />
@@ -163,15 +168,29 @@ export const FinalCTASection: React.FC = () => {
                   </label>
                   <select
                     value={formData.service}
-                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, service: e.target.value })
+                    }
                     className="w-full bg-[#111315] border border-white/15 px-3.5 py-2.5 text-xs font-mono text-white focus:outline-none focus:border-[#E35B27]"
                   >
-                    <option value="Aerial Data Processing">01 — Aerial Data Processing (LiDAR & Drone)</option>
-                    <option value="Geospatial Mapping">02 — Geospatial Mapping & GIS Deliverables</option>
-                    <option value="AI Detection">03 — AI Detection & Automated Classification</option>
-                    <option value="SLAM Reality Capture">04 — SLAM & 3D Reality Capture</option>
-                    <option value="BIM & Scan-to-BIM">05 — BIM & Scan-to-BIM Modeling</option>
-                    <option value="3D City Modeling">06 — 3D City & Digital Twin Modeling</option>
+                    <option value="Aerial Data Processing">
+                      01 — Aerial Data Processing (LiDAR & Drone)
+                    </option>
+                    <option value="Geospatial Mapping">
+                      02 — Geospatial Mapping & GIS Deliverables
+                    </option>
+                    <option value="AI Detection">
+                      03 — AI Detection & Automated Classification
+                    </option>
+                    <option value="SLAM Reality Capture">
+                      04 — SLAM & 3D Reality Capture
+                    </option>
+                    <option value="BIM & Scan-to-BIM">
+                      05 — BIM & Scan-to-BIM Modeling
+                    </option>
+                    <option value="3D City Modeling">
+                      06 — 3D City & Digital Twin Modeling
+                    </option>
                   </select>
                 </div>
 
@@ -183,7 +202,9 @@ export const FinalCTASection: React.FC = () => {
                     rows={4}
                     required
                     value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
                     placeholder="Describe survey area, sensor requirements, or downstream deliverables..."
                     className="w-full bg-black/50 border border-white/15 px-3.5 py-2.5 text-xs font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-[#E35B27]"
                   />
@@ -203,10 +224,12 @@ export const FinalCTASection: React.FC = () => {
 
         {/* Page Footer Marker matching PDF Page 16 */}
         <div className="mt-20 pt-6 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-neutral-500">
-          <span className="tracking-widest uppercase">TERRA INTI / SPATIAL INTELLIGENCE</span>
+          <span className="tracking-widest uppercase">
+            TERRA INTI / SPATIAL INTELLIGENCE
+          </span>
           <span className="text-[#E35B27] font-semibold">16</span>
         </div>
       </div>
     </section>
   );
-};
+}
