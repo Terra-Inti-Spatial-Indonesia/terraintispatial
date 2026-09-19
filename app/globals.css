@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+:root {
+  --spatial-bg-light: #F4F3EE;
+  --spatial-surface-light: #FFFFFF;
+  --spatial-border-light: #E2E0D7;
+  --spatial-text-light: #111315;
+  --spatial-muted-light: #6E737B;
+
+  --spatial-bg-dark: #111315;
+  --spatial-surface-dark: #181B1E;
+  --spatial-border-dark: rgba(255, 255, 255, 0.09);
+  --spatial-text-dark: #F5F5F7;
+  --spatial-muted-dark: #8E959E;
+
+  --spatial-orange: #E35B27;
+  --spatial-orange-hover: #F06529;
+  --spatial-forest: #0D2821;
+  --spatial-forest-dark: #071C16;
+  --spatial-teal: #10B981;
+  --spatial-cyan: #06B6D4;
+}
+
+/* Base Body Styles */
+html {
+  scroll-behavior: smooth;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+body {
+  background-color: var(--spatial-bg-dark);
+  color: var(--spatial-text-dark);
+  overflow-x: hidden;
+  selection-background-color: var(--spatial-orange);
+  selection-color: #FFFFFF;
+}
+
+::selection {
+  background: #E35B27;
+  color: #FFFFFF;
+}
+
+/* Custom technical spatial grid backgrounds */
+.bg-spatial-dark {
+  background-color: #111315;
+  color: #F5F5F7;
+}
+
+.bg-spatial-light {
+  background-color: #F4F3EE;
+  color: #111315;
+}
+
+.grid-overlay-dark {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.grid-overlay-light {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.dot-matrix-dark {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.dot-matrix-light {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Corner crosshairs for technical cards */
+.corner-crosshairs {
+  position: relative;
+}
+
+.corner-crosshairs::before,
+.corner-crosshairs::after {
+  content: "+";
+  position: absolute;
+  font-family: monospace;
+  font-size: 11px;
+  line-height: 1;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.corner-crosshairs::before {
+  top: 6px;
+  left: 6px;
+}
+
+.corner-crosshairs::after {
+  bottom: 6px;
+  right: 6px;
+}
+
+/* Scanline animation for computer vision / LiDAR */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(1000%);
+  }
+}
+
+.animate-scanline {
+  animation: scanline 8s linear infinite;
+}
+
+/* Pulse radar effect */
+@keyframes radar-pulse {
+  0% {
+    r: 5px;
+    opacity: 0.9;
+  }
+  100% {
+    r: 35px;
+    opacity: 0;
+  }
+}
+
+.radar-ping {
+  animation: radar-pulse 3s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111315;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A2E33;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E35B27;
+}
